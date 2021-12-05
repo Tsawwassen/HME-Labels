@@ -28,10 +28,10 @@ Labels have were written with pen and have started to fade. Using this app to pr
 ## How to use?
 
 
-## Contribution
-* J. Park if she is able to send me an export from Windward :P
+## Reference
+* CSV Parser ( https://www.npmjs.com/package/react-papaparse )
 
 ## Credits
-
+* J. Park if she is able to send me an export from Windward :P
 
 #### Anything else that seems useful
