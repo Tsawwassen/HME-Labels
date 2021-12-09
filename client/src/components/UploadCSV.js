@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Col, Container, Row, Form, Button } from 'react-bootstrap';
+
 let fileReader = new FileReader();
 
 class UploadCSV extends Component {
@@ -8,15 +9,18 @@ class UploadCSV extends Component {
     super(props);
     this.state = {
       filePath: {},
-      fileData: ""
+      fileData: []
     };
 
     this.fileOnChange = this.fileOnChange.bind(this);
     this.buttonClicked = this.buttonClicked.bind(this);
     this.handleFileRead = this.handleFileRead.bind(this);
+    this.testButtonClicked = this.testButtonClicked.bind(this);
   }
 
-  
+  testButtonClicked(){
+    console.log(this.state.fileData);
+  }
 
   fileOnChange(event){
     console.log(`file changed ${event.target.files[0].name}`);
@@ -24,19 +28,35 @@ class UploadCSV extends Component {
   }
 
   handleFileRead(e)  {
+    /**
+     * TODO : this code can probably be cleaned up A LOT, but it is working
+     *      The first CSV forEach loop can probably be added into the other forEach loops
+     */
     const content = fileReader.result;
-    console.log(content)
-    // … do something with the 'content' …
+    
+    const csv = content.split('\n');
+    const headers = csv.shift().split(',');
+    const table = [];
+
+    csv.forEach((row) => {
+      if(row === "") return; //skip row if row is empty, will continue parsing the file
+      table.push(row.split(','));
+    });
+    
+    const tempData = []
+    table.forEach((row, i) => {
+      tempData[i] = {};
+      row.forEach((cell, j) =>{
+        tempData[i][headers[j]] =  cell;
+      });
+    });
+  
+    this.setState({fileData: tempData});
   };
 
-  buttonClicked(){
-    console.log(`state file patch - ${this.state.filePath}`);
-    console.log("button clicked");
-  
-    
+  buttonClicked(){ //Not sure if I can put the handleFileRead function code in this block, and reduce the amount of code tracing, but it works.
     fileReader.onloadend = this.handleFileRead;
     fileReader.readAsText(this.state.filePath);
-    
   }
 
   render() {
@@ -50,6 +70,7 @@ class UploadCSV extends Component {
                         <Form.Control type="file" onChange={this.fileOnChange}  />
                     </Form.Group>
                     <Button variant="primary" type="button" onClick={this.buttonClicked}>Submit</Button>
+                    {/*<Button variant="primary" type="button" onClick={this.testButtonClicked}>TEST</Button>*/}
                 </Form>
                 </Col>
             </Row>
