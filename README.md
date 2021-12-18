@@ -23,10 +23,12 @@ Labels have were written with pen and have started to fade. Using this app to pr
 
 
 ## Installation
-
+* npm run client-install
+** Install React app
 
 ## How to use?
-
+* npm run client
+** Stant React app
 
 ## Reference
 * CSV Parser ( https://www.npmjs.com/package/react-papaparse )
