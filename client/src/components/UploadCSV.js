@@ -50,7 +50,7 @@ class UploadCSV extends Component {
         tempData[i][headers[j]] =  cell;
       });
     });
-  
+     console.log(tempData); // Stub test uploaded data
     this.setState({fileData: tempData});
   };
 
