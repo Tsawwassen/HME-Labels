@@ -50,13 +50,17 @@ class UploadCSV extends Component {
         tempData[i][headers[j]] =  cell;
       });
     });
-     console.log(tempData); // Stub test uploaded data
+     //console.log(tempData); // Stub test uploaded data
     this.setState({fileData: tempData});
+    this.props.onClick(tempData);
   };
 
   buttonClicked(){ //Not sure if I can put the handleFileRead function code in this block, and reduce the amount of code tracing, but it works.
     fileReader.onloadend = this.handleFileRead;
-    fileReader.readAsText(this.state.filePath);
+  
+   try{
+     fileReader.readAsText(this.state.filePath);
+    } catch(error){ }; //Would be nice to have something better then this try catch
   }
 
   render() {
