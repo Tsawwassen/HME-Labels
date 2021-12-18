@@ -15,7 +15,7 @@ class Header extends Component {
         <Container>
           <Navbar.Brand >Shelf Label</Navbar.Brand>
             <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link value='0' onClick={this.props.onClick}>Upload</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
