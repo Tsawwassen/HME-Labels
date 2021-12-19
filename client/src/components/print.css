@@ -1,0 +1,9 @@
+.Label {
+    height:2.75in;
+    width:5in;
+    border-style: solid;
+    float:left;
+}
+.Row{
+    display: inline-block;
+}
