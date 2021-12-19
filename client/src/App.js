@@ -25,13 +25,13 @@ class App extends Component {
   }
 
   handleViewChange(event){
-    console.log(event.target.attributes.value.value);
     this.setState({view: event.target.attributes.value.value})
   }
 
   handleCreateLabel(data){
     this.setState({table: data});
     this.setState({view: this.PRINT});
+    
   }
 
   render() {
