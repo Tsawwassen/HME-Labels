@@ -8,7 +8,8 @@ const ROWS_PER_PAGE = 3;
 
 function Label(props){
   
-  let index = props.label + (props.row * LABELS_PER_ROW) + ((props.page * (LABELS_PER_ROW+ROWS_PER_PAGE)) + props.page);
+  let index = props.label + (props.row * LABELS_PER_ROW) + ((props.page * (LABELS_PER_ROW+ROWS_PER_PAGE)) + props.page); 
+  //I wonder if this logic works for any value for LABELS_PER_ROW and ROWS_PER_PAGE
   
   if(index >= props.table.length) return <div className='Label'></div>;
   
@@ -66,35 +67,7 @@ class Print extends Component {
   
  
 
-  render() {
-      //console.log(this.props.table);
-      //Every 2 labels, create new row
-      //Every 6 labels, create new page (for printing)
-      //Test that the app works fine when the number of labels is < a full page (this.props.table.length % 6 != 0)
-
-      // <div className='Row'>
-      //           <div className='Label'></div>
-      //           <div className='Label'></div>
-      //         </div>
-      //         <div className='Row'>
-      //           <div className='Label'></div>
-      //           <div className='Label'></div>
-      //         </div>
-
-      // this.props.table.forEach((label, index) => {
-      //   console.log(label);
-      // });
-    
-    
-    
-    return (
-              
-                <Display {...this.props }/>
-                
-            
-              
-    );
-  };
+  render() {return <Display {...this.props } />};
 }
   export default Print;
   
