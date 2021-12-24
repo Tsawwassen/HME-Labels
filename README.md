@@ -33,8 +33,9 @@ Labels have were written with pen and have started to fade. Using this app to pr
 ## Reference
 * CSV Parser ( https://www.npmjs.com/package/react-papaparse )
 * Barcoder ( https://www.npmjs.com/package/react-barcode )
+* Use DIVs as a table ( https://stackoverflow.com/questions/3053205/how-create-table-only-using-div-tag-and-css )
 
 ## Credits
-* J. Park if she is able to send me an export from Windward :P
+* <strikeout>J. Park if she is able to send me an export from Windward :P</strikeout>
 
 #### Anything else that seems useful
