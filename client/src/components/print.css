@@ -1,9 +1,12 @@
-.Label {
+.label {
     height:2.75in;
     width:5in;
     border-style: solid;
-    float:left;
+    display:table-cell;
 }
-.Row{
-    display: inline-block;
+.label_row{
+    display:table-row;
+}
+.label_page{
+    display:table;
 }
