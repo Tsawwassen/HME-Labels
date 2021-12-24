@@ -13,7 +13,7 @@ function Label(props){
   
   if(index >= props.table.length) return <div className='Label'></div>; //Return empty label div to avoid array out of bounds error
   
-  return (<div className='Label' >
+  return (<div className='label' >
             <h1>{props.table[index].part_number} </h1>
           </div>);
 }
@@ -24,7 +24,7 @@ function Row(props){
     labels.push(<Label key={i} label={i} {...props} />);
   }
 
-  return (<div className='Row'> {labels} </div>)
+  return (<div className='label_row'> {labels} </div>)
 }
 
 function Page(props){
@@ -33,7 +33,7 @@ function Page(props){
   for(let i = 0 ; i < ROWS_PER_PAGE ; i++){
     rows.push(<Row key={i} row={i} {...props} />);
   }
-  return (<div className='Page'> {rows} </div>)
+  return (<div className='label_page'> {rows} </div>)
 }
 
 function Display(props){
