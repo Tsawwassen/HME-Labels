@@ -10,3 +10,10 @@
 .label_page{
     display:table;
 }
+table{
+    height:2in;
+    width:4.75in;
+}
+th{
+    width: 25%;
+}
