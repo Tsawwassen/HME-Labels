@@ -40,6 +40,7 @@ class App extends Component {
         <Header onClick={this.handleViewChange} />
         { this.state.view === this.UPLOAD && <UploadCSV onClick={this.handleCreateLabel} /> }
         { this.state.view === this.PRINT && <Print table={this.state.table} /> }
+        
       </div>
     );
   }
