@@ -11,9 +11,22 @@
     display:table;
 }
 table{
-    height:2in;
+    margin-top: 10px;
     width:4.75in;
 }
 th{
     width: 25%;
+    text-align: left!important;
+    padding-left: 20px;
+}
+
+
+
+@media print {
+    .navbar {
+        display: none!important;
+    }
+    .label_page{
+        page-break-after: always;
+    }
 }
