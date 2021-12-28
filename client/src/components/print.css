@@ -9,6 +9,8 @@
 }
 .label_page{
     display:table;
+    margin-left:40px;
+    margin-top:10px;
 }
 table{
     margin-top: 10px;
