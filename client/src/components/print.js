@@ -15,7 +15,7 @@ function Label(props){
 
   let barcodeOptions = {
                 width: 2,
-                height: 50,
+                height: 35,
                 format: "CODE128",
                 displayValue: true,
                 fontOptions: "",
@@ -27,10 +27,10 @@ function Label(props){
                 background: "#ffffff",
                 lineColor: "#000000",
                 margin: 10,
-                marginTop: undefined,
-                marginBottom: undefined,
-                marginLeft: undefined,
-                marginRight: undefined
+                marginTop: 0,
+                marginBottom: 0,
+                marginLeft: 0,
+                marginRight: 0
   };
   
   if(index >= props.table.length) return <div className='Label'></div>; //Return empty label div to avoid array out of bounds error
@@ -39,22 +39,21 @@ function Label(props){
   return (<div className='label' > 
             <table>
               <tbody>
-                <tr>
-                  <th>{startCase(Object.keys(props.table[0])[0])}</th>
-                  <td colSpan="2">{props.table[index].part_number}</td>
-                </tr>
-                <tr>
-                <th>{startCase(Object.keys(props.table[0])[1])}</th>
-                  <td colSpan="2">{props.table[index].supplier}</td>
-                </tr>
-                <tr>
-                <th>{startCase(Object.keys(props.table[0])[2])}</th>
-                  <td colSpan="2">{props.table[index].description} </td>
-                </tr>
+                
+                
+                <tr><th>{startCase(Object.keys(props.table[0])[1])}</th></tr>
+                <tr> <td>{props.table[index].supplier}</td></tr>
+                
+                <tr><th>{startCase(Object.keys(props.table[0])[2])}</th></tr>
+                <tr><td>{props.table[index].description} </td></tr>
+
+                <tr><th>{startCase(Object.keys(props.table[0])[0])}</th></tr>
+                  <tr><td><Barcode value={props.table[index].part_number} {...barcodeOptions} /></td></tr>
+                
               </tbody>
             </table>
             
-            <Barcode value={props.table[index].part_number} {...barcodeOptions} />
+            
           </div>);
 }
 
