@@ -17,7 +17,7 @@ function Label(props){
                 width: 2,
                 height: 35,
                 format: "CODE128",
-                displayValue: true,
+                displayValue: false,
                 fontOptions: "",
                 font: "monospace",
                 textAlign: "center",
@@ -48,6 +48,7 @@ function Label(props){
                 <tr><td>{props.table[index].description} </td></tr>
 
                 <tr><th>{startCase(Object.keys(props.table[0])[0])}</th></tr>
+                  <tr><td>{props.table[index].part_number}</td></tr>
                   <tr><td><Barcode value={props.table[index].part_number} {...barcodeOptions} /></td></tr>
                 
               </tbody>
