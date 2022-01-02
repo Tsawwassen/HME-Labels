@@ -8,9 +8,11 @@ Create an app that takes a CSV file as input and displays labels to be printed
 1. Create UI to input CSV file - done
 2. Display CSV data on labels to be printed - done
 3. Test that the correct amount of labels are printed per page - done
-4. Test what will happen if text to longer then the label box - TODO
+4. Test what will happen if text to longer then the label box - done
     -Will it wrap to the next line? will it go onto the next box?
-5. Layout is done, test that the labels print the correct size IRL to fit label sleeve (?)
+    --Used a few CSS attributes to solve this problem. The web display doesnt show the same as the printed verion.
+    -- The printed version is working fine
+5. Layout is done, test that the labels print the correct size IRL to fit label sleeve -done
 
 ## Purpose
 Labels have were written with pen and have started to fade. Using this app to print labels will make them last longer and be easier to update information and add new labels for new products
