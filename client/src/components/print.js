@@ -1,4 +1,4 @@
-import './print.css';
+import './print.scss';
 
 
 import React, { Component } from 'react';
