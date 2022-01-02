@@ -13,16 +13,24 @@
     margin-top:10px;
 }
 table{
-    margin-top: 10px;
+    margin-top: 5px;
     width:4.75in;
+    height:100%;
 }
-th{
-    width: 25%;
-    text-align: left!important;
-    padding-left: 20px;
+
+.supplier{
+    text-align:left;
+    padding-left:20px;
+    height:10%;
+    font-size: large;
 }
-td{
-    font-size: 150%;
+.description{
+    font-size: 300%;
+}
+
+.barcode{
+    bottom:0;
+    height:35%;
 }
 
 

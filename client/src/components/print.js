@@ -3,7 +3,7 @@ import './print.css';
 
 import React, { Component } from 'react';
 var Barcode = require('react-barcode');
-var startCase = require('lodash.startcase');
+
 
 const  LABELS_PER_ROW = 2; 
 const ROWS_PER_PAGE = 3;
@@ -15,9 +15,9 @@ function Label(props){
 
   let barcodeOptions = {
                 width: 2,
-                height: 35,
+                height: 30,
                 format: "CODE128",
-                displayValue: false,
+                displayValue: true,
                 fontOptions: "",
                 font: "monospace",
                 textAlign: "center",
@@ -41,15 +41,14 @@ function Label(props){
               <tbody>
                 
                 
-                <tr><th>{startCase(Object.keys(props.table[0])[1])}</th></tr>
-                <tr> <td>{props.table[index].supplier}</td></tr>
                 
-                <tr><th>{startCase(Object.keys(props.table[0])[2])}</th></tr>
-                <tr><td>{props.table[index].description} </td></tr>
+                <tr> <td className="supplier">{props.table[index].supplier}</td></tr>
+                
+                
+                <tr><td className="description">{props.table[index].description} </td></tr>
 
-                <tr><th>{startCase(Object.keys(props.table[0])[0])}</th></tr>
-                  <tr><td>{props.table[index].part_number}</td></tr>
-                  <tr><td><Barcode value={props.table[index].part_number} {...barcodeOptions} /></td></tr>
+                
+                  <tr><td className="barcode"><Barcode value={props.table[index].part_number} {...barcodeOptions} /></td></tr>
                 
               </tbody>
             </table>
